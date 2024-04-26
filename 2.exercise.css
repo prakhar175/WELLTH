@@ -1,0 +1,103 @@
+body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f0f0;
+  }
+  
+  .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+  }
+  
+  .box {
+      width: calc(33.33% - 20px);
+      height: calc(33.33vh - 20px);
+      margin: 10px;
+      color: #fff;
+      text-align: center;
+      padding: 30px 0;
+      border-radius: 5px;
+      box-sizing: border-box;
+      background-size: cover;
+      background-position: center;
+      font-size: 24px; /* Adjust the font size as needed */
+      text-decoration: none; /* Remove default underline for anchor tags */
+      transition: transform 0.3s; /* Add transition for zoom effect */
+  }
+  
+  /* Center align the text */
+  .box::before {
+      content: "";
+      display: inline-block;
+      height: 100%;
+      vertical-align: middle;
+  }
+  
+  .box span {
+      display: inline-block;
+      vertical-align: middle;
+  }
+  
+  /* Add background images */
+  .shoulders {
+      background-image: url('https://barbend.com/wp-content/uploads/2022/04/shutterstock_102169051-1.jpg');
+  }
+  
+  .arms {
+      background-image: url('https://hips.hearstapps.com/hmg-prod/images/gym-workout-weight-training-bodybuilding-muscular-royalty-free-image-1703160802.jpg?crop=1.00xw:1.00xh;0,0&resize=2048:*');
+  }
+  
+  .abs {
+      background-image: url('https://i0.wp.com/www.muscleandfitness.com/wp-content/uploads/2018/05/abs-woman-situp-1109.jpg?w=1400&h=787&crop=1&quality=86&strip=all');
+  }
+  
+  .legs {
+      background-image: url('https://qph.cf2.quoracdn.net/main-qimg-87c7f72349a45ee7253c067e530b674a');
+  }
+  
+  .chest {
+      background-image: url('https://i0.wp.com/www.muscleandfitness.com/wp-content/uploads/2015/10/cable-crossover-content-chest-pec.jpg?w=1400&h=787&crop=1&quality=86&strip=all');
+  }
+  
+  .back {
+      background-image: url('https://barbend.com/wp-content/uploads/2022/04/shutterstock_177873932.jpg');
+  }
+  
+  /* Darken the image and zoom in slightly on hover */
+  .box:hover .shoulders,
+  .box:hover .arms,
+  .box:hover .abs,
+  .box:hover .legs,
+  .box:hover .chest,
+  .box:hover .back {
+      filter: brightness(80%); /* Darken the image */
+  }
+  
+  .box:hover {
+      transform: scale(1.05); /* Zoom in slightly */
+  }
+  
+  .heading {
+      text-align: center;
+      font-family: 'Arial Black', sans-serif;
+      font-size: 36px;
+      color: #333;
+      margin-bottom: 20px;
+  }
+  
+  @media (max-width: 768px) {
+      .box {
+          width: calc(50% - 20px);
+          height: calc(50vh - 20px);
+      }
+  }
+  
+  @media (min-width: 768px) {
+      .box {
+          width: calc(50% - 20px);
+          height: calc(50vh - 20px);
+      }
+  }
+  

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coming Soon</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+        body {
+            background: radial-gradient(circle, #666666, #000000);
+            height: 100vh;
+            margin: 0; 
+            display: flex;
+            justify-content: center;
+            align-items: center; 
+            font-family: 'Poppins', sans-serif; 
+            font-weight :1000;
+        }
+
+        @keyframes movingText {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+        
+        .moving-text {
+            font-size: 4rem;
+            white-space: nowrap;
+            animation: movingText 4s linear infinite;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="moving-text text-center">
+        Coming Soon
+    </div>
+</body>
+</html>

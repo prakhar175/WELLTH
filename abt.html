@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    
+    <style>
+        body {
+            background-color: #5d644dc7;
+            color: beige;
+        }
+
+        .slide-in {
+            animation: slideInRight 2s forwards;
+            display: none;
+        }
+
+        @keyframes slideInRight {
+            from {
+                transform: translateX(100%);
+            }
+
+            to {
+                transform: translateX(0);
+            }
+        }
+
+        .back-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: blue;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button{
+            height: 45px;
+            width:45px;
+            position:absolute;
+            top:0rem;
+            right:0rem;
+            background-color:red;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <button class="back-button" onclick="goBack()">Back</button> -->
+
+    <div class="slide-in">
+        <div class="container">
+            <h1>Welcome to Wellth: Where Wellness and Health Thrive</h1>
+            <p>At Wellth, we're dedicated to empowering individuals on their journey to optimal health and vitality. Founded on the belief that true wealth lies in good health, we strive to be your partner in achieving a balanced lifestyle through fitness, nutrition, and holistic wellness practices.</p>
+            <h2>Our Mission</h2>
+            <p>Our mission is simple yet profound: to inspire and support you in becoming the healthiest version of yourself. We believe that wellness is not a destination but a lifelong journey, and we're here to guide you every step of the way.</p>
+            <h2>What Sets Us Apart</h2>
+            <p>At Wellth, we understand that health is not one-size-fits-all. That's why we offer personalized solutions tailored to your unique needs and goals. Whether you're looking to build strength, lose weight, improve flexibility, or simply enhance your overall well-being, our team of experts is here to design a customized plan that works for you.</p>
+            <h2>Our Approach</h2>
+            <p>We believe in taking a holistic approach to health, addressing the interconnectedness of the body, mind, and spirit. Through a combination of exercise, nutrition, mindfulness, and community support, we help you create sustainable habits that promote long-term wellness.</p>
+            <h2>Our Team</h2>
+            <p>Our team consists of passionate professionals who are dedicated to helping you reach your full potential. From certified personal trainers and nutritionists to wellness coaches and yoga instructors, each member of our team brings expertise, compassion, and a genuine commitment to your success.</p>
+            <h2>Community and Support</h2>
+            <p>At Wellth, we believe that health is not just about individual actions but also about community and support. That's why we foster a welcoming and inclusive environment where everyone feels empowered and encouraged to pursue their wellness goals. Whether you're a beginner or a seasoned fitness enthusiast, you'll find a supportive community here to cheer you on every step of the way.</p>
+            <h2>Get Started Today</h2>
+            <p>Ready to embark on your journey to wellness? Join us at Wellth and discover a path to vibrant health and vitality. Whether you prefer to work out in our state-of-the-art gym, participate in our group fitness classes, or access personalized nutrition plans online, we have everything you need to thrive.</p>
+            <p>Thank you for choosing Wellth as your partner in health. Together, let's create a life of well-being, vitality, and abundance.</p>
+        </div>
+    </div>
+    <a href="home2.html"><button>Back</button></a>
+    <script>
+        window.onload = function() {
+            document.querySelector('.slide-in').style.display = 'block';
+        };
+
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

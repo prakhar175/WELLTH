@@ -1,0 +1,89 @@
+<?php
+Database connection
+$servername = "localhost";
+$username = "your_username";
+$password = "your_password";
+$database = "your_database";
+
+$conn = new mysqli($    servername, $username, $password, $database);
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// Initialize variables
+$username = $email = $password = "";
+$error_message = "";
+
+// Process form data when submitted
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $username = trim($_POST['username']);
+    $email = trim($_POST['email']);
+    $password = $_POST['password'];
+
+    // Validate username
+    if (empty($username)) {
+        $error_message .= "Username is required.<br>";
+    }
+
+    // Validate email
+    if (empty($email)) {
+        $error_message .= "Email is required.<br>";
+    } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $error_message .= "Invalid email format.<br>";
+    }
+
+    // Validate password
+    if (empty($password)) {
+        $error_message .= "Password is required.<br>";
+    }
+
+    // If no validation errors, proceed to insert into database
+    if (empty($error_message)) {
+        $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+
+        $sql = "INSERT INTO users (username, email, password) VALUES ('$username', '$email', '$hashed_password')";
+        if ($conn->query($sql) === TRUE) {
+            header("Location: login.php");
+            exit;
+        } else {
+            $error_message = "Error: " . $sql . "<br>" . $conn->error;
+        }
+    }
+}
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gym Registration</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="registration-container">
+        <h2>Register for Gym</h2>
+        <?php if (!empty($error_message)) : ?>
+            <div class="error-message"><?php echo $error_message; ?></div>
+        <?php endif; ?>
+        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" value="<?php echo $username; ?>" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" value="<?php echo $email; ?>" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit">Register</button>
+        </form>
+    </div>
+</body>
+
+</html>

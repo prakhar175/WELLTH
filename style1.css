@@ -1,0 +1,61 @@
+
+
+.button1 {
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+
+  }
+  
+  .button1 img {
+    transition: transform 0.3s, filter 0.3s;
+    width: 100%;
+    height: auto;
+  }
+  
+  .button1:hover img {
+    transform: scale(1.2);
+    filter: brightness(0.7) contrast(1.2) vignette(0.8);
+  }
+  
+  .button1::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, transparent, rgba(0, 0, 0, 0.8));
+    opacity: 0;
+    transition: opacity 0.3s;
+    z-index: 1;
+  }
+  
+  .button1:hover::before {
+    opacity: 1;
+  }
+
+  #top-left {
+    grid-area: 1 / 1 / 2 / 2;
+  }
+  
+  #top-right {
+    grid-area: 1 / 2 / 2 / 3;
+  }
+  
+  #bottom-left {
+    grid-area: 2 / 1 / 3 / 2;
+  }
+  
+  #bottom-right {
+    grid-area: 2 / 2 / 3 / 3;
+  }
+  .btn-grp {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    height: 100vh;
+  }
